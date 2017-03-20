@@ -14,4 +14,7 @@ public class Application {
     return processorsFactory;
   }
 
+  IStreamDecoratorController getStreamDecoratorController() {
+    return null;
+  }
 }
