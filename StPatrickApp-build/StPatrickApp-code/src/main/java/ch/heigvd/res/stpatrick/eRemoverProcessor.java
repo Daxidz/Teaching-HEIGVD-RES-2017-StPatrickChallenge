@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 
+
+
+
 /**
  * The responsibility of this class is to read characters from an input
  * reader, to process them, and to write them to an output writer.
@@ -18,7 +21,7 @@ import java.io.Writer;
  * 
  * @author Olivier Liechti
  */
-class BasicStreamProcessor implements IStreamProcessor {
+class eRemoverProcessor implements IStreamProcessor {
 
   @Override
   public void process(Reader in, Writer out) throws IOException {
@@ -27,7 +30,8 @@ class BasicStreamProcessor implements IStreamProcessor {
     int c = br.read();
     while (c != -1) {
       c = br.read();
-      bw.write(c);
+      if (c != 'E' || c != 'e')
+          bw.write(c);
     }
     bw.flush();
   }
